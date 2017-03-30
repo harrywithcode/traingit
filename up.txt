@@ -1,0 +1,17 @@
+两种从本地上传代码到github上
+一.比较简单的情况。本地已经建好了repository，而github上是一个空的repository。
+此时，我们不需要比较（fetch），直接上传即可。命令如下：
+1. 到本地代码目录下
+2. git init， 令这个本地文件夹成为一个本地的repository
+3. 如果此时，你又在本地增加了一个文件，想把这个新增的文件放入你建好的repository
+你可以先：git status 查看一下当前文档们的状态
+然后：git add filename 说明你把新增的这个文档放入了你的repository
+最后，你需要 git commit -m '本次操作说明'，这相当于你编辑了一个东西，最后的一个
+提交过程。至此，你的提交完成
+4. 找到你要添加的github上面的repository，copy它的URL
+输入指令 git remote add origin URL
+origin只不过是一个名字，你可以起其他的名字，如果发生冲突
+你可以使用 git remote rm origin 就会把之前的这个remote预操作删除。
+更多内容可以访问：https://help.github.com/articles/removing-a-remote/
+5. 输入git remote -v确认没有重名情况
+6. 最后输入git push origin master 
